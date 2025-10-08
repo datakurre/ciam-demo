@@ -1,10 +1,11 @@
 import { UserManager } from 'oidc-client-ts';
+import { getFullUrl, BASE_PATH } from '../config';
 
 const userManager = new UserManager({
   authority: 'https://pandala-prod.cidaas.eu',
   client_id: 'acf2c834-89a6-467e-9869-ae2308906466',
-  redirect_uri: window.location.origin + '/callback',
-  post_logout_redirect_uri: window.location.origin,
+  redirect_uri: getFullUrl('#/callback'),
+  post_logout_redirect_uri: window.location.origin + BASE_PATH,
   response_type: 'code',
   scope: 'openid profile email',
 });
