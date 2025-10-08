@@ -4,7 +4,7 @@ import Callback from './pages/Callback';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ciam-demo">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/callback" element={<Callback />} />

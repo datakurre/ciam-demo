@@ -5,6 +5,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/ciam-demo/',
   plugins: [react()],
+  server: {
+    // Ensure all routes fall back to index.html for SPA routing
+    historyApiFallback: true,
+  },
+  preview: {
+    // Also configure for preview mode
+    historyApiFallback: true,
+  },
   test: {
     globals: true,
     environment: 'jsdom',
